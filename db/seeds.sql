@@ -1,3 +1,6 @@
+
+USE employee_db;
+
 INSERT INTO departments (dept_name)
 VALUES
     ('Sales'),
@@ -16,7 +19,7 @@ VALUES
     ('Lawyer', 300000.00, 4),
     ('Legal Assistant', 60000.00, 4);
 
-INSERT INTO employees (first_name, last_name, job_title_id, manager_id)
+INSERT INTO employees (first_name, last_name, job_title_id)
 VALUES
     ('Helen', 'Hunt', 1),
     ('Kelly', 'Kapowski', 8),
@@ -38,5 +41,5 @@ VALUES
     ('Stefan', 'Lessard', 3),
     ('Boyd', 'Tinsley', 2),
     ('Bart', 'Simpson', 6),
-    ('Goose', 'Gossitch', 3),
-    ('Thomas', 'Cruise', 2);
+    ('Kate', 'Boss', 3),
+    ('Thomas', 'Cruise', 2)

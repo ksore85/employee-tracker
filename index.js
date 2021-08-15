@@ -54,7 +54,6 @@ function menu() {
 }
 
 function viewDepartment() {
-
     connection.query("SELECT * FROM departments", (err, data) => {
         console.table(data)
         menu()
@@ -97,7 +96,6 @@ function addRole() {
              }
          })
 
-
         inquirer.prompt([
             {
             type: "input",
@@ -122,11 +120,55 @@ function addRole() {
             })
         }) 
     
-    })
-
-
-   
-
+    })  
 }
-function addEmployee() {}
-function updateRole() {}
+function addEmployee() {
+    
+       inquirer.prompt([
+        {
+           type: "input",
+           message: "What is the new employee's first name?",
+           name: "firstName"
+       },{
+           type: "input",
+           message: "What is the new employees last name?",
+           name: "lastName"
+       },{
+           type: "input",
+           message: "what is the new employee's job title ID?",
+           name: "jobId"
+           
+       }
+   
+   ])
+       .then(response => {
+           connection.query("INSERT INTO employees (first_name, last_name, job_title_id)  values (?,?,?)", [response.firstName, response.lastName, response.jobId], (err, data) => {
+               console.log("New employee has been added!")
+               menu()
+           })
+       })    
+}
+
+function updateRole(){
+    connection.query("SELECT * FROM employees",(err, employeeData) => {
+
+        const employeeNames  = employeeData.map(employee => {
+            return {
+                name: `${employee.first_name} ${employee.last_Name}`,
+                value: employee.id
+            }
+        })
+        inquirer.prompt([
+            {
+                type: "list",
+                message: "Which employee would you like to update?",
+                name: "employeeName",
+                choices: employeeNames
+            }
+        ])
+
+        connection.query("SELECT * FROM roles",(err, roleData) => {
+            
+        })
+    },
+}
