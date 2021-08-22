@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql2")
 require("console.table")
-//view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
+//view all departments, view all roles, view all employees, add a department, add a role and add an employee,
 
 const connection = require("./db/connection") 
 
@@ -23,7 +23,6 @@ function menu() {
         "Add a department",
         "Add a role",
         "Add an employee",
-        "Update an employee Role",
       ],
     })
     .then((response) => {
@@ -45,9 +44,6 @@ function menu() {
           break;
         case "Add an employee":
           addEmployee();
-          break;
-        case "Update an employee Role":
-          updateRole();
           break;
       }
     });
@@ -149,26 +145,3 @@ function addEmployee() {
        })    
 }
 
-function updateRole(){
-    connection.query("SELECT * FROM employees",(err, employeeData) => {
-
-        const employeeNames  = employeeData.map(employee => {
-            return {
-                name: `${employee.first_name} ${employee.last_Name}`,
-                value: employee.id
-            }
-        })
-        inquirer.prompt([
-            {
-                type: "list",
-                message: "Which employee would you like to update?",
-                name: "employeeName",
-                choices: employeeNames
-            }
-        ])
-
-        connection.query("SELECT * FROM roles",(err, roleData) => {
-            
-        })
-    },
-}

@@ -1,19 +1,28 @@
-# employee-tracker
+# Employee Tracker
 
-GIVEN a command-line application that accepts user input
-WHEN I start the application
-THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
-WHEN I choose to view all departments
-THEN I am presented with a formatted table showing department names and department ids
-WHEN I choose to view all roles
-THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
-WHEN I choose to view all employees
-THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
-WHEN I choose to add a department
-THEN I am prompted to enter the name of the department and that department is added to the database
-WHEN I choose to add a role
-THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
-WHEN I choose to add an employee
-THEN I am prompted to enter the employee’s first name, last name, role, and manager and that employee is added to the database
-WHEN I choose to update an employee role
-THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
+## Description
+This application can be used to manage a company's employee database. [the walkthrough video](https://drive.google.com/file/d/1wCx2QRjvsr1slEeGwBxWYZOy81KJmzSs/view) will demo functionality.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Credits](#credits)
+- [Questions, Comments](#questions-comments)
+
+## Installation
+To install this application, clone the application to your local device.
+
+## Usage
+### Walkthrough Video
+[This walkthrough video](https://drive.google.com/file/d/1wCx2QRjvsr1slEeGwBxWYZOy81KJmzSs/view) will demonstrate this application's functionality. 
+
+## License
+[![license-MIT-blue.png](https://img.shields.io/badge/license-MIT-blue)](#License)
+
+## Credits
+### Developed By
+- [Kyle Sorensen] (https://www.github.com/ksore85)
+
+## Questions, Comments, Suggestions
+Please email [Kyle Sorensen](mailto:ksore85@gmail.com) with any questions, or to make any feature suggestions. You can also [contact Kyle Sorensen on GitHub](https://www.github.com/ksore85).
